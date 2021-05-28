@@ -1,10 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-        BodyMassIndex service = new BodyMassIndex();
-        short height = 173; // Рост в см
-        double weight = 60; // Вес в кг
-        double bodyMassIndex = service.calculate(height, weight);
-        String formattedBMI = String.format("%.2f", bodyMassIndex);
-        System.out.println("Индекс массы тела: " + formattedBMI);
+        BMIserviceClassic classicBMI = new BMIserviceClassic();
+        BMIserviceOxford oxfordBMI = new BMIserviceOxford();
+        short height = 186; // Рост в см
+        double weight = 115; // Вес в кг
+        double classicBodyMassIndex = classicBMI.calculate(height, weight);
+        double oxfordBodyMassIndex = oxfordBMI.calculate(height, weight);
+        System.out.printf("Индекс массы тела по классической системе: %.2f\n", classicBodyMassIndex);
+        System.out.printf("Индекс массы тела по оксфордской системе: %.2f", oxfordBodyMassIndex);
     }
 }
